@@ -17,14 +17,14 @@
 <!--NAVBAR SECTION-->
   <nav class="navbar">
     <div data-aos="fade-down" data-aos-duration="1500" class="logo">PIXEL BRIDGE</div>
-    <div class="nav-links">
-      <a data-aos="fade-up" data-aos-duration="1500" href="#services">Services<span></span></a>
-      <a data-aos="fade-up" data-aos-duration="2000" href="#portfolio">Portfolio<span></span></a>
-      <a data-aos="fade-up" data-aos-duration="2500" href="#pricing">Pricing<span></span></a>
-      <a data-aos="fade-up" data-aos-duration="3000" href="#team">Team<span></span></a>
+    <div class="nav-links" id="primary-nav" aria-label="Primary">
+      <a href="#services">Services<span></span></a>
+      <a href="#portfolio">Portfolio<span></span></a>
+      <a href="#pricing">Pricing<span></span></a>
+      <a href="#team">Team<span></span></a>
     </div>
     <div class="cta-button">Get Started</div>
-    <div class="hamburger">
+    <div class="hamburger" role="button" tabindex="0" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-nav">
       <span></span>
       <span></span>
       <span></span>
@@ -157,7 +157,8 @@
         <p class="price">₹5,999</p>
       </div>
   
-      <div class="pricing-card active" onclick="activateCard(this)" data-aos="zoom-in" data-aos-delay="400">
+      <div class="pricing-card active pricing-card--featured" onclick="activateCard(this)" data-aos="zoom-in" data-aos-delay="400">
+        <span class="pricing-ribbon" aria-hidden="true">Most popular</span>
         <h3>MEDIUM</h3>
         <ul>
           <li>3 pages</li>
@@ -288,7 +289,21 @@
 <script src="script.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
-  AOS.init();
+  (function () {
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) {
+      AOS.init({ disable: true });
+    } else {
+      AOS.init({
+        duration: 900,
+        easing: 'ease-out-cubic',
+        once: true,
+        offset: 48,
+        delay: 0,
+        mirror: false
+      });
+    }
+  })();
 </script>
 <!--AEO ANIMATION TAG DONT DISTURB ENDS HERE-->
 

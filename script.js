@@ -77,16 +77,57 @@ function initAll() {
   const navLinks = document.querySelector('.nav-links');
   const navLinksA = document.querySelectorAll('.nav-links a');
 
+  const setMenuOpen = (open) => {
+    navLinks.classList.toggle('active', open);
+    hamburger.classList.toggle('active', open);
+    hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  };
+
   hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    hamburger.classList.toggle('active');
+    const open = !navLinks.classList.contains('active');
+    setMenuOpen(open);
   });
+
+  hamburger.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      const open = !navLinks.classList.contains('active');
+      setMenuOpen(open);
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!navLinks.classList.contains('active')) return;
+    if (hamburger.contains(e.target) || navLinks.contains(e.target)) return;
+    setMenuOpen(false);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+      setMenuOpen(false);
+    }
+  });
+
+  // Smooth in-page navigation (works well with scroll-padding on html)
+  const smoothScrollToHash = (hash) => {
+    if (!hash || hash === '#') return;
+    const target = document.querySelector(hash);
+    if (!target) return;
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   // Close menu when clicking a link
   navLinksA.forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('active');
-      hamburger.classList.remove('active');
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#') && href.length > 1) {
+        e.preventDefault();
+        smoothScrollToHash(href);
+        if (window.history.replaceState) {
+          window.history.replaceState(null, '', href);
+        }
+      }
+      setMenuOpen(false);
     });
   });
 
@@ -105,11 +146,9 @@ function initAll() {
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', initAll);
 
-// PRICING SECTION
+function activateCard(card) {
+  document.querySelectorAll('.pricing-card').forEach((c) => c.classList.remove('active'));
+  card.classList.add('active');
+}
 
-  function activateCard(card) {
-    document.querySelectorAll('.pricing-card')
-      .forEach(c => c.classList.remove('active'));
-    card.classList.add('active');
-  }
-
+window.activateCard = activateCard;
