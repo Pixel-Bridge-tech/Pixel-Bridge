@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PIXEL BRIDGE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -16,7 +19,7 @@
 
 <!--NAVBAR SECTION-->
   <nav class="navbar">
-    <div data-aos="fade-down" data-aos-duration="1500" class="logo">PIXEL BRIDGE</div>
+    <div data-aos="fade-down" data-aos-duration="600" class="logo">PIXEL BRIDGE</div>
     <div class="nav-links" id="primary-nav" aria-label="Primary">
       <a href="#services">Services<span></span></a>
       <a href="#portfolio">Portfolio<span></span></a>
@@ -33,25 +36,90 @@
 <!--END OF NAVBAR SECTION-->
 
 <!--HERO SECTION-->
-  <section class="hero-section" data-aos="fade-in">
+<section class="hero-section" data-aos="fade-in">
+
+  <div class="grid-background"></div>
+
+  <div class="hero-grid">
+
+    <!-- LEFT SIDE -->
     <div class="content">
+
       <div class="tag-box" data-aos="zoom-in" data-aos-delay="200">
-        <div class="tag">INTRODUCING &wedbar;</div>
+        <div class="tag">INTRODUCING</div>
       </div>
-      <h1 data-aos="fade-up" data-aos-delay="400">PIXEL BRIDGE</h1>
-      <p class="discription" data-aos="fade-up" data-aos-delay="600">From Pixels to Performance: Elevating Digital Experiences</p>
+
+      <h1 data-aos="fade-up" data-aos-delay="400">
+        PIXEL BRIDGE
+      </h1>
+
+      <p class="description" data-aos="fade-up" data-aos-delay="600">
+        We create modern, high-converting digital experiences
+        for businesses that want to stand out online.
+      </p>
+
       <div class="buttons" data-aos="fade-up" data-aos-delay="800">
-        <a href="" class="btn-get-started">Get Started</a>
-        <a href="" class="btn-learn-more">Learn More</a>
+        <a href="" class="btn-get-started">Get a Website</a>
+        <a href="" class="btn-learn-more">View Projects</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <h2>10+</h2>
+          <p>Projects</p>
+        </div>
+        <div>
+          <h2>100%</h2>
+          <p>Responsive</p>
+        </div>
+        <div>
+          <h2>24/7</h2>
+          <p>Support</p>
+        </div>
       </div>
     </div>
-  </section>
+    <!-- RIGHT SIDE -->
+    <div class="hero-visual">
+      <div class="orb"></div>
+      <div class="floating-card card-one">
+        Modern UI
+      </div>
+      <div class="floating-card card-two">
+        Fast Performance
+      </div>
+      <div class="floating-card card-three">
+        Creative Design
+      </div>
+    </div>
+  </div>
+</section>
 <!--HERO SECTION ENDS HERE-->
 
+
+
+
 <!--SERVICES SECTION-->
-  <section class="services-1">
-    <h2 class="services-name">SERVICES</h2>
-  </section>
+
+<section class="section-heading">
+
+  <h1 class="bg-text">
+    SERVICES
+  </h1>
+
+  <div class="heading-content">
+    <span class="mini-tag">
+      WHAT WE DO
+    </span>
+    <h2>
+      Crafting Modern <br>
+      Digital Experiences
+    </h2>
+    <p>
+      We build visually stunning and high-performing websites
+      designed to elevate your brand online.
+    </p>
+  </div>
+
+</section>
 
 
   <section class="services-section" id="services" data-aos="fade-up">
@@ -65,28 +133,40 @@
       </div>
       <div class="services-grid" data-aos="fade-up" data-aos-delay="400">
         <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
-          <span class="service-number">01</span>
+          <div class="service-top">
+            <span class="service-number">01</span>
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
           <h3>Business Websites</h3>
           <p>
             Professional and responsive websites for businesses and startups.
           </p>
         </div>
         <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
-          <span class="service-number">02</span>
+          <div class="service-top">
+            <span class="service-number">02</span>
+            <i class="fa-solid fa-bolt"></i>
+          </div>
           <h3>Landing Pages</h3>
           <p>
             High-converting landing pages designed for campaigns and promotions.
           </p>
         </div>
         <div class="service-card" data-aos="zoom-in" data-aos-delay="600">
-          <span class="service-number">03</span>
+          <div class="service-top">
+            <span class="service-number">03</span>
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
           <h3>Portfolio Websites</h3>
           <p>
             Personal and portfolio websites for freelancers and professionals.
           </p>
         </div>
         <div class="service-card" data-aos="zoom-in" data-aos-delay="800">
-          <span class="service-number">04</span>
+          <div class="service-top">
+            <span class="service-number">04</span>
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
           <h3>Website Redesign</h3>
           <p>
             Modern redesigns to improve speed, usability, and visual appeal.
@@ -96,10 +176,33 @@
     </div>
   </section>
 
+<!--PORTFOLIO STARTS HERE-->
 
-  <section class="services-2">
-    <h2 class="services-name-1">OUR RECENT WORKS</h2>
-  </section>
+<section class="section-heading portfolio-heading">
+
+  <h1 class="bg-text">
+    WORKS
+  </h1>
+
+  <div class="heading-content">
+
+    <span class="mini-tag">
+      PORTFOLIO
+    </span>
+
+    <h2>
+      Selected Projects <br>
+      That Define Our Creativity
+    </h2>
+
+    <p>
+      A collection of modern websites crafted with performance,
+      aesthetics, and user experience in mind.
+    </p>
+
+  </div>
+
+</section>
 
   <section id="portfolio" data-aos="fade-up">
     <div class="filter-buttons" data-aos="fade-up" data-aos-delay="200">
@@ -142,8 +245,18 @@
   </section>
 
 
+
+<!--PRICING SECTION BEGINS HERE-->
+
   <section class="pricing-section" id="pricing" data-aos="fade-up">
-    <h2 class="pricing-title" data-aos="fade-up" data-aos-delay="200">PRICING PLANS</h2>
+    <h1 class="pricing-bg-text">
+      PRICING
+    </h1>
+    <h2 class="pricing-title" data-aos="fade-up" data-aos-delay="200">Choose Your Digital Experience</h2>
+    <p class="pricing-subtitle">
+      Flexible website solutions crafted for startups,
+      growing brands, and ambitious businesses.
+    </p>
   
     <div class="pricing-wrapper" data-aos="fade-up" data-aos-delay="400">
       <div class="pricing-card" onclick="activateCard(this)" data-aos="zoom-in" data-aos-delay="200">
@@ -155,6 +268,9 @@
           <li>1 month revision</li>
         </ul>
         <p class="price">₹5,999</p>
+        <a href="#footer" class="pricing-btn">
+          Book a Call
+        </a>
       </div>
   
       <div class="pricing-card active pricing-card--featured" onclick="activateCard(this)" data-aos="zoom-in" data-aos-delay="400">
@@ -169,6 +285,9 @@
           <li>Scroll effects</li>
         </ul>
         <p class="price">₹9,999</p>
+        <a href="#footer" class="pricing-btn">
+          Book a Call
+        </a>
       </div>
   
       <div class="pricing-card" onclick="activateCard(this)" data-aos="zoom-in" data-aos-delay="600">
@@ -180,9 +299,11 @@
           <li>Basic SEO</li>
           <li>3 month revision</li>
           <li>Animation</li>
-          <li>Logo optimisation</li>
         </ul>
         <p class="price">₹15,999</p>
+        <a href="#footer" class="pricing-btn">
+          Book a Call
+        </a>
       </div>
     </div>
   </section>
@@ -190,7 +311,31 @@
   <!--+++++++++++ OUR TEAM =================-->
 
 <section id="team" data-aos="fade-up">
-<h2 class="team" data-aos="fade-up" data-aos-delay="200">TEAM</h2>
+  <section class="section-heading team-heading">
+
+    <h1 class="bg-text">
+      TEAM
+    </h1>
+  
+    <div class="heading-content">
+  
+      <span class="mini-tag">
+        FOUNDERS
+      </span>
+  
+      <h2>
+        The Creative Minds <br>
+        Behind Pixel Bridge
+      </h2>
+  
+      <p>
+        A passionate team focused on building visually stunning
+        and performance-driven digital experiences.
+      </p>
+  
+    </div>
+  
+  </section>
   <div class="cards-1" data-aos="fade-up" data-aos-delay="400">
     <div class="card">
         <div class="thumb">
