@@ -152,3 +152,17 @@ function activateCard(card) {
 }
 
 window.activateCard = activateCard;
+const expandButtons = document.querySelectorAll('.expand-btn');
+
+expandButtons.forEach(button => {
+
+  button.addEventListener('click', () => {
+
+    const parent =
+      button.parentElement;
+
+    parent.classList.toggle('active');
+
+  });
+
+});
